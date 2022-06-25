@@ -1,0 +1,25 @@
+.split {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+.left{
+    left:0;
+    width: 25%;
+    background-color: rgb(152, 150, 150);
+}
+.right{
+    right:0;
+    width: 75%;
+    background-color: rgb(255, 255, 255);
+}
+img{
+    width: 367px;
+    height: 300px;
+}
+hr{
+    border-color: black;
+}
