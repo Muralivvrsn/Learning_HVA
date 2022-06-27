@@ -1,0 +1,98 @@
+body{
+    background-color: #80ced6;
+    justify-content: center;
+    word-wrap: break-word;
+}
+h1,h2{
+    backdrop-filter: blur(10px);
+    float: left;
+    font-size: 26px;
+    letter-spacing: .5px;
+    font-family: consolas;
+    margin-left: 150px;
+    margin-top: 0px;
+    position: relative;
+}
+.headerr{
+    padding: 40px;
+}
+h1:hover{
+    color: black;
+    text-shadow: 1px 4px 3px white;
+    transition-duration: .2s;
+}
+h2:hover{
+    color: black;
+    text-shadow: 2px 3px 3px white;
+    transition-duration: .2s;
+}
+a{
+    text-decoration: none;
+    color: #344444;
+    cursor: pointer;
+}
+table{
+    border: 2px solid black;
+}
+p{
+    font-size: 10px;
+    letter-spacing: 5px;
+}
+.first{
+    margin-left: 180px;
+    margin-top: 200px;
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation: fir 5s infinite;
+}
+.second{
+    margin-left: 0px;
+    margin-top: 0px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    background-color: pink;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation: sec 5s infinite;
+}
+.third{
+    margin-left: 1000px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    background-color: indigo;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation: thi 5s infinite;
+}
+.fourth{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    background-color: saddlebrown;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation: fou 5s infinite;
+}
+@keyframes fir{
+    from {top:0px;}
+    to {top:300px;}
+}
+@keyframes sec{
+    from {left: 0px;}
+    to {left: 300px;}
+}
+@keyframes thi{
+    from {right: 0px;}
+    to {right: 300px;}
+}
+@keyframes fou{
+    from {bottom: 0px;}
+    to {bottom: 300px;}
+}
