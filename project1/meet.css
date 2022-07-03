@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(27, 27, 27);
+    display: flex;
+    flex-flow: column;
+}
+.black-box{
+    background-color: rgb(65, 65, 65);
+    margin-top: 130px;
+    width: 500px;
+    height: 400px;
+    border-radius: 5px;
+}
+.flex-box{
+    display: flex;
+    justify-content: space-evenly;
+}
+.circle{
+    background-color: rgb(27, 27, 27);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
