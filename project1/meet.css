@@ -2,10 +2,12 @@ body{
     background-color: rgb(27, 27, 27);
     display: flex;
     flex-flow: column;
+    /* flex-wrap: wrap; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 11px;
     color: rgb(201, 200, 200);
 }
+
 .flex-box{
     display: flex;
     justify-content: space-evenly;
@@ -41,6 +43,7 @@ body{
 .emoji{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     /* border: 2px solid white; */
     margin-top: 8%;
 }
@@ -65,4 +68,13 @@ body{
     height: 30px;
     background-color: red;
     border-radius: 40%;
+}
+@media screen and (max-width: 1500px) {
+    .black-box{
+        width: 478px;
+        height: 400px;
+    }
+    .pic img{
+        margin-left: 450px;
+    }
 }
