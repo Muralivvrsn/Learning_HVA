@@ -10,6 +10,7 @@ body {
 
 .flex-box {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 .black-box {
@@ -70,12 +71,41 @@ body {
   background-color: red;
   border-radius: 40%;
 }
-@media screen and (max-width: 1550px) and (min-width: 1300px) {
-  .black-box {
-    width: 478px;
+.f {
+  grid-area: farea;
+}
+.s {
+  grid-area: sarea;
+}
+.t {
+  grid-area: tarea;
+}
+@media screen and (max-width: 1006px) and (min-width: 200px) {
+  /* .flex-box {
+    flex-flow: wrap;
+    justify-content: center;
+    border: 2px solid rgb(255, 255, 255);
+  } */
+  .s,
+  .f,
+  .t {
+    width: 700px;
     height: 400px;
+    margin-left: 30px;
+    margin-top: 10px;
   }
-  .pic img {
-    margin-left: 450px;
+  .name {
+    margin-top: 95px;
+  }
+  .pic {
+    margin-left: 36em;
+  }
+  .black-box img {
+    margin-left: 25em;
+  }
+}
+@media screen and (max-width: 1500px) and (min-width: 1007px) {
+  .t {
+    margin-top: 10px;
   }
 }
