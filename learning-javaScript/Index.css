@@ -3,7 +3,31 @@ header {
   font-family: cursive;
   text-align: center;
 }
-span {
-  margin: auto;
+body {
+  background-color: bisque;
+  display: flex;
+  flex-flow: column;
+}
+label {
+  font-size: large;
+}
+input,
+button {
+  width: 100px;
+  height: inherit;
+}
+form {
+  display: flex;
+  flex-flow: column;
+  margin-left: 300px;
+  margin-top: 50px;
+}
+#x-sol,
+#y-sol {
   border: 2px solid black;
+  width: 100px;
+  height: 20px;
+}
+.result {
+  display: flex;
 }

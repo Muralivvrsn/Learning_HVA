@@ -11,14 +11,19 @@
     <div class="input-values">
         <form action="">
             <label for="number">a</label>
-            <input type="number" id="a-input" required>
+            <input type="number" id="a-input" required><br>
             <label for="number">b</label>
-            <input type="number" id="b-input" required>
+            <input type="number" id="b-input" required><br>
             <label for="number">c</label>
-            <input type="number"  id="c-input" required>
+            <input type="number"  id="c-input" required><br>
             <button id="generate-btn" onclick="solve()">Generate</button>
         </form>
-        <span id="solution" align="center">solution</span>
+        <div class="result">
+            <h2>X:</h2>
+            <div id="x-sol"></div><br>
+            <h2>Y:</h2>
+            <div id="y-sol"></div>
+        </div>
     </div>
     <script src="Index.js"></script>
 </body>
