@@ -22,12 +22,7 @@ form {
   margin-left: 300px;
   margin-top: 50px;
 }
-#x-sol,
-#y-sol {
-  border: 2px solid black;
-  width: 100px;
-  height: 20px;
-}
+
 .result {
   display: flex;
 }
