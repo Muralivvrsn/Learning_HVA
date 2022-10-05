@@ -116,7 +116,7 @@ body{
 #load{
     margin-left: 10px;
 }
-.class-load{
+#class-load{
     display: none;
     z-index: 9999;
 }
