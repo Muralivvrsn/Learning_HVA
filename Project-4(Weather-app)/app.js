@@ -39,8 +39,8 @@ function getDetails(name){
             let detailsOfcity = `<p>${data['location'].name}</p><p>${data['location'].lat}</p><p>${data['location'].lon}</p><p>${data['location'].localtime}</p>`
             details.innerHTML = detailsOfcity;
             climate.innerHTML = data['current'].weather_descriptions[0];
-            celcius.innerHTML = `${data['current'].temperature}<sup>o</sup>c`;
-            foreign.innerHTML = `${Math.floor(((data['current'].temperature)*1.8)+32)}<sup>o</sup>f`;
+            celcius.innerHTML = `${data['current'].temperature}<sup>o</sup>C`;
+            foreign.innerHTML = `${Math.floor(((data['current'].temperature)*1.8)+32)}<sup>o</sup>F`;
             main.style.display='block';
         }
         load.style.display='none';
