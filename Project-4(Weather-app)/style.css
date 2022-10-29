@@ -6,7 +6,6 @@
     position: relative;
     display: flex;
     height: fit-content;
-    justify-content: safe;
 }
 #main{
     display: none;
@@ -35,19 +34,6 @@ button{
     border-radius: 5px;
     cursor: pointer;
 }
-.celcius,.foreign{
-    position: relative;
-    width: 200px;
-    height:200px;
-    text-align: center;
-    font-size: 4rem;
-    color: white;
-    background-color: hsl(0, 0%, 0%, 80%);
-    border-radius: 50%;
-    height: fit-content;
-    border-radius: 50%;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
 .celcius{
     margin-left: 15%;
 }
@@ -55,39 +41,58 @@ button{
     margin-right: 15%;
 }
 sup{
-    font-size: 3.5rem;
+    font-size: 1rem;
+    margin-left: 5px;
+    cursor: pointer;
+}
+#climate{
+    font-size: 2rem;
 }
 .images{
     width: 100%;
 }
 body{
-    position: fixed;
+    position: relative;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background: url('seasons.jpg') no-repeat center center fixed;
+    background: linear-gradient(90deg, #0011FF, #00AAFF);
 }
 .details-loc{
     /* display: none; */
     text-align: center;
-    padding-left: 30px;
     font-size: 1.5rem;
     margin: auto;
+    max-width: 100%;
     width: 32%;
-    padding: 10px;
-    height: 100%;
+    padding: 15px;
+    height: auto;
     background-color: hsl(0, 100%, 100%, 80%);
     border-radius: 10px;
     /* border: 2px solid black; */
 }
-.details-loc > p{
+#details > p{
     max-width: 100%;
     height: auto;
     color: black;
     font-size: 2rem;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
     font-weight: bolder;
+}
+#change{
+    font-size: 2rem;
+    color: black;
+    font-weight: bolder;
+    letter-spacing: 4px;
+}
+sup{
+    font-size: 1.5rem;
+}
+.temperature{
+    margin: auto;
+    text-align: center;
+    border: 2px solid black;
 }
 .climate{
     display: flex;
