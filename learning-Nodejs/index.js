@@ -1,10 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const newPosts = require("./mongoose");
 router.get("/post",function(req,res){
     res.send({type: 'GET'});
 })
 router.post('/post',function(req,res){
-    res.send({type: "POST"});
+    newPosts.create(req.body).then(function(newPost){
+        res.send(newPost);
+    });
 });
 router.put('/post/:id',function(req,res){
     res.send({type: "PUT"});
