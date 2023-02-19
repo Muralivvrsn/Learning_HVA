@@ -6,7 +6,7 @@ const operation = prompt('Enter Operation (+,-,%,/,*)');
 // USING FUNCTIONS AND IF ELSE STATEMENTS
 
 // IF ELSE STATEMENTS
-if (operation === '+')
+if (operation == '+')
     sum(firstNumber, secondNumber);
 else if (operation === '-')
     subtract(firstNumber, secondNumber);
