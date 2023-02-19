@@ -1,11 +1,14 @@
 import React from "react";
-import deletes from "./delete.png";
-import edit from "./edit.png";
 import { useState } from "react";
-const Box = (props) => {
+import deleteIcon from "./delete.png";
+import editIcon from "./edit.png";
+const Card = (props) => {
+  let x = 0;
   const [buttonName, changeName] = useState("Add");
   const [Index, changeIndex] = useState(0);
   const showEdit = (index) => {
+    x++;
+    console.log(x);
     if (buttonName === "Edit") {
       changeName("Add");
     } else {
@@ -13,20 +16,17 @@ const Box = (props) => {
       changeIndex(index);
     }
   };
-  // visible variable
+  //---------------------------------------------------------------------//
   const [add, setVisible] = useState(0);
-  //List Storage
   const [listItems, setListItems] = useState([]);
-  // INput Storage
   const [title, setTitle] = useState("");
-  /* Input visible Function */
   const showInput = () => {
-    if (add == 0) setVisible(1);
+    if (add === 0) setVisible(1);
     else {
       setVisible(0);
     }
   };
-  // Adding Item to the List;
+  //------------------------------------------------------------------//
   const handleAddItem = () => {
     if (buttonName === "Edit") {
       let list = [...listItems];
@@ -40,16 +40,17 @@ const Box = (props) => {
     setTitle("");
     showInput();
   };
-  // Adding Item to the list when Clicking on Enter button
+  //-------------------------------------------------------------------------//
   const handlePress = (e) => {
     if (e.key === "Enter") handleAddItem();
   };
-  // Removing List Item
+  //-------------------------------------------------------------------------//
   const handleRemove = (index) => {
     const list = [...listItems];
     list.splice(index, 1);
     setListItems(list);
   };
+  //--------------------------------------------------------------------------//
   const changeInput = (index) => {
     setTitle(listItems[index].listitem);
     showEdit(index);
@@ -57,7 +58,7 @@ const Box = (props) => {
   };
   return (
     <div className="priority">
-      <div className={add === 1 ? "shape" : "shapes"}>
+      <div className={add === 1 ? "show" : "show1"}>
         <div className="box"></div>
         <div className="triangle"></div>
       </div>
@@ -68,7 +69,9 @@ const Box = (props) => {
           onChange={(e) => setTitle(e.target.value)}
           onKeyPress={handlePress}
         />
-        <button id='btn'onClick={handleAddItem}>{buttonName}</button>
+        <button id="btn" onClick={handleAddItem}>
+          {buttonName}
+        </button>
       </div>
       <div className="data">
         <section className={props.className} id="head">
@@ -86,7 +89,7 @@ const Box = (props) => {
               </div>
               <div className="delete">
                 <img
-                  src={deletes}
+                  src={deleteIcon}
                   alt=""
                   width="10px"
                   height="10px"
@@ -97,7 +100,7 @@ const Box = (props) => {
               </div>
               <div className="edit">
                 <img
-                  src={edit}
+                  src={editIcon}
                   alt=""
                   width="10px"
                   height="10px"
@@ -114,4 +117,4 @@ const Box = (props) => {
   );
 };
 
-export default Box;
+export default Card;
