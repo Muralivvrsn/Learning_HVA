@@ -26,24 +26,20 @@
             },
             render: function(){
                 var ninjas = this.state.ninjas;
+                console.log("this is data",ninjas);
+                ninjas = <li>
+                            <span className={ninjas.available}></span>
+                            <span className="name">{ninjas.name}</span>
+                            <span className="rank">{ninjas.rank}</span>
+                        </li>;
+
                 console.log(ninjas);
-                ninjas = ninjas.map(function(ninja, index){
-                    return(
-                        <li key={index}>
-                            <span className={ninja.obj.available}></span>
-                            <span className="name">{ninja.obj.name}</span>
-                            <span className="rank">{ninja.obj.rank}</span>
-                            <span className="dist">{Math.floor(ninja.dis / 1000)} km</span>
-                        </li>
-                    );
-                });
+                
                 return(
                     <div id="ninja-container">
                         <form id="search" onSubmit={this.handleSubmit}>
-                            <label>Enter your Latitude:</label>
-                            <input type="text" ref="lat" placeholder="latitude" required />
-                            <label>Enter your Longitude:</label>
-                            <input type="text" ref="lng" placeholder="longitude" required />
+                            <label>Enter your Id</label>
+                            <input type="text" ref="id" placeholder="Enter id" required />
                             <input type="submit" value="Find Ninjas" />
                         </form>
                         <ul>{ninjas}</ul>
@@ -52,15 +48,14 @@
             },
             handleSubmit: function(e){
                 e.preventDefault();
-                var lng = this.refs.lng.value;
-                var lat = this.refs.lat.value;
-                fetch('/api/ninjas?lng=' + lng + '&lat=' + lat).then(function(data){
+                var id = this.refs.id.value;
+                fetch('/api/ninjas?id='+id).then(function(data){
                     return data.json();
-                }).then( json => {
+                }).then( res => {
                     this.setState({
-                        ninjas: json
+                        ninjas: res
                     });
-                    console.log(json);
+                    console.log("this is json", res);
                 });
             }
         });

@@ -12,6 +12,10 @@ const GeoSchema = new Schema({
     }
 });
 const NinjaSchema = new Schema({
+    id:{
+        type:String,
+        required:[true,"id is required"]
+    },
     name: {
         type: String,
         required: [true, 'Name field is required']

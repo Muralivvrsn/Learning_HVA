@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
+const os = require('node:os');
+console.log("this",os);
 async function connect() {
   try {
     mongoose.connect(
@@ -13,7 +15,6 @@ async function connect() {
   }
 }
 connect();
-mongoose.Promise = global.Promise;
 app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use("/api", require("./routes/api"));
