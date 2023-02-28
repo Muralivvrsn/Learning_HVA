@@ -6,3 +6,11 @@ nav img {
   height: 50px;
   border-radius: 50%;
 }
+button > a{
+  text-decoration: none;
+  color: white;
+}
+button > a:hover{
+  text-decoration: none;
+  color: white;
+}
