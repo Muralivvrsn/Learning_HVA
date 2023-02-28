@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+<body>
+    <h1 class="bg-primary text-white text-center  p-3">Create Account</h1>
+    <p class="text-center">Already have an account? <a href="/blog/login">Log in</a></p>
+    <div class="container d-flex align-items-center justify-content-center">
+        <form action="user" method="POST" class="shadow p-5 mb-5 bg-white rounded">
+            <div class="form-row">
+                <div class="col">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required/>
+                </div>
+                <div class="col">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="email@gmail.com" required/>
+            </div>
+            <div class="form-group">
+                <label for="number">Mobile</label>
+                <input type="text" class="form-control" id="number" name="number" placeholder="Phone" />
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password</label>
+                <input type="password" class="form-control" id="pwd" name="pwd" required/>
+            </div>
+            <div class="form-group">
+                <label for="pwd2">Re-enter Password</label>
+                <input type="password" class="form-control" id="pwd2" name="pwd2" required/>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-outline-primary">Register</button>
+            </div>
+        </form>
+    </div>
+    <!-- <%- include("../partials/footer.ejs")%> -->
+</body>
+</html>

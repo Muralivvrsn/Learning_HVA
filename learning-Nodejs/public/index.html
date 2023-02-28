@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninjago</title>
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link href="/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+
+        <h1 class="title">Ninjago - a Ninja REST API</h1>
+        <div id="homepage">
+            <h1>Hire a ninja in your area!</h1>
+            <div id="ninjas"></div>
+        </div>
+
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="https://unpkg.com/react@15/dist/react.js"></script>
+        <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+        <script type="text/babel">
+        var Ninjas = React.createClass({
+            getInitialState: function(){
+                return({
+                    ninjas: []
+                });
+            },
+            render: function(){
+                var ninjas = this.state.ninjas;
+                console.log("this is data",ninjas);
+                ninjas = <li>
+                            <span className={ninjas.available}></span>
+                            <span className="name">{ninjas.name}</span>
+                            <span className="rank">{ninjas.rank}</span>
+                        </li>;
+
+                console.log(ninjas);
+                
+                return(
+                    <div id="ninja-container">
+                        <form id="search" onSubmit={this.handleSubmit}>
+                            <label>Enter your Id</label>
+                            <input type="text" ref="id" placeholder="Enter id" required />
+                            <input type="submit" value="Find Ninjas" />
+                        </form>
+                        <ul>{ninjas}</ul>
+                    </div>
+                );
+            },
+            handleSubmit: function(e){
+                e.preventDefault();
+                var id = this.refs.id.value;
+                fetch('/api/ninjas?id='+id).then(function(data){
+                    return data.json();
+                }).then( res => {
+                    this.setState({
+                        ninjas: res
+                    });
+                    console.log("this is json", res);
+                });
+            }
+        });
+        ReactDOM.render(<Ninjas />, document.getElementById('ninjas'));
+        </script>
+
+
+    </body>
+</html>
