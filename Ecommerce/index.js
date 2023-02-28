@@ -9,10 +9,10 @@ try {
   mongoose.connect(process.env.DATABASE_LINK);
   
 } catch (err) {
-  console.log(process.env.port)
   console.log(err);
   
 }
+
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
@@ -24,5 +24,4 @@ app.use("/blog", require("./Routes/api"));
 
 app.listen(process.env.port || 3000, function () {
   console.log("listening to port");
-  console.log(process.env)
 });
