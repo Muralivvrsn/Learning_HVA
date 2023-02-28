@@ -1,15 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const { json } = require("stream/consumers");
+const dotenv = require('dotenv');
+dotenv.config();
 const app = express();
 app.set("view engine", "ejs");
 try {
-  mongoose.connect(
-    "mongodb+srv://murali:murali1889@cluster0.ev7pbcx.mongodb.net/?retryWrites=true&w=majority"
-  );
+  mongoose.connect(process.env.DATABASE_LINK);
+  
 } catch (err) {
+  console.log(process.env.port)
   console.log(err);
+  
 }
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
@@ -22,4 +24,5 @@ app.use("/blog", require("./Routes/api"));
 
 app.listen(process.env.port || 3000, function () {
   console.log("listening to port");
+  console.log(process.env)
 });
